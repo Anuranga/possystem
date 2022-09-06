@@ -7,6 +7,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 /* components */
 import { ChartsComponent } from './charts.component';
 import { EChartsComponent } from './components/echarts/echarts.component';
+import {CreateComponent} from './components/create/create.component';
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import { EChartsComponent } from './components/echarts/echarts.component';
     ],
     declarations: [
         ChartsComponent,
-        EChartsComponent
+        EChartsComponent,
+        CreateComponent
     ]
 })
 export class ChartsModule { }

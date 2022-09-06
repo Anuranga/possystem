@@ -15,6 +15,7 @@ import { SingleSelectComponent } from './components/ng2-select/single-select/sin
 import { MultipleSelectComponent } from './components/ng2-select/multiple-select/multiple-select.component';
 import { ChildrenSelectComponent } from './components/ng2-select/children-select/children-select.component';
 import { AddTileComponent } from './components/add-tile/add-tile.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
     imports: [
@@ -22,7 +23,9 @@ import { AddTileComponent } from './components/add-tile/add-tile.component';
         SharedModule,
         FileUploadModule,
         SelectModule,
-        routing
+        routing,
+        ReactiveFormsModule,
+        FormsModule
     ],
     declarations: [
         FormComponent,

@@ -12,11 +12,12 @@ const childRoutes: Routes = [
         component: FormComponent,
         children: [
             { path: '', redirectTo: 'inputs', pathMatch: 'full' },
-            { path: 'form-inputs', component: FormInputsComponent },
+           /* { path: 'form-inputs', component: FormInputsComponent },
             { path: 'form-layouts', component: FormLayoutsComponent },
             { path: 'file-upload', component: FileUploadComponent },
-            { path: 'ng2-select', component: Ng2SelectComponent },
-            { path: 'add-tile', component: AddTileComponent },
+            { path: 'ng2-select', component: Ng2SelectComponent },*/
+            { path: 'create', component: AddTileComponent },
+            { path: 'create/:id', component: AddTileComponent },
         ]
     }
 ];

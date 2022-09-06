@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <card cardTitle="Data Table">
+    <card cardTitle="Lile List">
       <table class="table table-bordered table-hover">
         <thead>
         <tr>
@@ -10,20 +10,48 @@
           <th>Size</th>
           <th>Type</th>
           <th>Company</th>
+          <th>Cost</th>
+          <th>Selling Price</th>
           <th>Quantity</th>
+          <th>Edit</th>
+          <th>Remove</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let item of tableData | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index">
-          <td>{{item.firstName}}</td>
-          <td>{{item.lastName}}</td>
-          <td>{{item.username}}</td>
-          <td>{{item.username}}</td>
-          <td>{{item.email}}</td>
-          <td class="label label-info" style="text-align: center">10</td>
+          <td>{{index + 1}}</td>
+          <td>{{item.item_code}}</td>
+          <td>{{item.shade}}</td>
           <td>
-            <span><button class="btn btn-primary" (click)="seventhModal.open()">View</button></span>
+            <span *ngIf="item.Size == 1">1*1</span>
+            <span *ngIf="item.Size == 2">2*2</span>
+            <span *ngIf="item.Size == 3">3*3</span>
+            <span *ngIf="item.Size == 4">4*4</span>
           </td>
+          <td>
+            <span *ngIf="item.type == 1">Floor</span>
+            <span *ngIf="item.type == 2">Wall</span>
+          </td>
+          <!--<td class="label label-info" style="text-align: center">10</td>-->
+          <td>
+            <span *ngIf="item.company_id == 1">Lanka</span>
+            <span *ngIf="item.company_id == 2">Rocell</span>
+            <span *ngIf="item.company_id == 3">Mactile</span>
+          </td>
+          <td>{{item.cost}}</td>
+          <td>{{item.selling_price}}</td>
+          <td>
+            <span>{{item.qty}}</span>
+          </td>
+          <td>
+            <span><button class="btn btn-primary" (click)="editTile(item.id)">Edit</button></span>
+          </td>
+          <td>
+            <span><button class="btn btn-danger" (click)="alertConfirm(item.id)">Remove</button></span>
+          </td>
+        </tr>
+        <tr *ngIf="errorOccured" class="alert-warning">
+          <td colspan="10"><b>No Records Found</b></td>
         </tr>
         </tbody>
       </table>
@@ -57,10 +85,7 @@
     <h3>it opens first modal after you close it</h3>
   </modal-header>
   <modal-content>
-    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.
-      Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
-      Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
-      cardigan american apparel, butcher voluptate nisi qui.</p>
+    <p>Raw denim you </p>
   </modal-content>
   <modal-footer>
     <button class="btn btn-primary" (click)="closeModal(seventhModal)">close</button>

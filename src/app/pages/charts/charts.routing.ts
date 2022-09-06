@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { ChartsComponent } from './charts.component';
 import { EChartsComponent } from './components/echarts/echarts.component';
+import {CreateComponent} from './components/create/create.component';
 
 const childRoutes: Routes = [
     {
@@ -9,6 +10,7 @@ const childRoutes: Routes = [
         children: [
             { path: '', redirectTo: 'echarts', pathMatch: 'full' },
             { path: 'echarts', component: EChartsComponent },
+            { path: 'create-order', component: CreateComponent },
         ]
     }
 ];

@@ -4,10 +4,24 @@ export let MENU_ITEM = [
         title: 'Dashboard',
         icon: 'dashboard'
     },
-   /* {
+   /*{
         path: 'editor',
-        title: 'Pell Editor',
-        icon: 'pencil'
+        title: 'Transactions',
+        icon: 'pencil',
+         children: [
+           {
+             path: 'add',
+             title: 'Create'
+           },
+           {
+             path: 'approve',
+             title: 'Approve'
+           },
+           {
+             path: 'view',
+             title: 'View'
+           }
+         ]
     },*/
     /*{
         path: 'icon',
@@ -60,10 +74,10 @@ export let MENU_ITEM = [
     },*/
     {
         path: 'form',
-        title: 'Forms',
+        title: 'Products',
         icon: 'check-square-o',
         children: [
-            {
+            /*{
                 path: 'form-inputs',
                 title: 'Form Inputs'
             },
@@ -78,24 +92,36 @@ export let MENU_ITEM = [
             {
                 path: 'ng2-select',
                 title: 'Ng2-Select'
-            },
+            },*/
             {
-                path: 'add-tile',
+                path: 'create',
                 title: 'Add Tile'
             }
         ]
     },
-    /*{
+    {
         path: 'charts',
-        title: 'Charts',
-        icon: 'bar-chart',
+        title: 'Transactions',
+        icon: 'pencil',
         children: [
-            {
+            /*{
                 path: 'echarts',
                 title: 'Echarts'
+            },*/
+           {
+                path: 'create-order',
+                title: 'Create'
+            },
+            {
+              path: 'approve',
+              title: 'Approve'
+            },
+            {
+              path: 'view',
+              title: 'View'
             }
         ]
-    },*/
+    },
     {
         path: 'table',
         title: 'Product List',
@@ -111,7 +137,7 @@ export let MENU_ITEM = [
             },*/
             {
                 path: 'tile-list',
-                title: 'Tile list'
+                title: 'Tile List'
             }
         ]
     },

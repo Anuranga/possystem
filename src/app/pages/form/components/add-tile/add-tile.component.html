@@ -12,31 +12,38 @@
   </div>-->
   <div class="col-md-12">
     <card cardTitle="">
-      <form class="form-group">
+      <form class="form-group" [formGroup]="tileForm" >
         <label class="control-label">Item Code</label>
-        <input type="text" class="form-control" placeholder="Item Code">
+        <input type="text" class="form-control" formControlName="itemCode" placeholder="Item Code">
         <label class="control-label">Shade</label>
-        <input type="text" class="form-control" placeholder="Shade">
+        <input type="text" class="form-control" formControlName="shade" placeholder="Shade">
         <label class="control-label">Size</label>
-        <input type="text" class="form-control" placeholder="Size">
+        <!--<input type="text" class="form-control" formControlName="size" placeholder="Size">-->
+        <select id="size" formControlName="size"  class="form-control">
+          <option value="1">1*1</option>
+          <option value="2">2*2</option>
+          <option value="3">4*4</option>
+          <option value="4">1*2</option>
+        </select>
         <label class="control-label">Type</label>
-        <select name="select" id="type" class="form-control">
-          <option value="option1">Floor</option>
-          <option value="option2">Wall</option>
+        <select id="type" formControlName="type"  class="form-control">
+          <option value="1">Floor</option>
+          <option value="2">Wall</option>
         </select>
         <label class="control-label">Company</label>
-        <select name="select" id="company" class="form-control">
-          <option value="option1">Lanka</option>
-          <option value="option2">Rocell</option>
-          <option value="option2">Mactile</option>
+        <select id="company" formControlName="company" class="form-control">
+          <option value="1">Lanka</option>
+          <option value="2">Rocell</option>
+          <option value="3">Mactile</option>
         </select>
         <label class="control-label">Quantity</label>
-        <input type="number" class="form-control" placeholder="Quantity">
+        <input type="number" class="form-control" formControlName="quantity" placeholder="Quantity">
         <label class="control-label">Cost</label>
-        <input type="number" class="form-control" placeholder="Cost">
+        <input type="number" class="form-control" formControlName="cost" name="cost" placeholder="Cost">
         <label class="control-label">Selling price</label>
-        <input type="number" class="form-control" placeholder="Selling price">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <input type="number" class="form-control" formControlName="sellingPrice" placeholder="Selling price">
+        <button type="button" class="btn btn-primary" (click)="addTile()">Submit</button>
+        <button type="button" class="btn btn-danger" (click)="loadTile()">Cancel</button>
       </form>
     </card>
   </div>
