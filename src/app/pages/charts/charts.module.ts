@@ -8,14 +8,16 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { ChartsComponent } from './charts.component';
 import { EChartsComponent } from './components/echarts/echarts.component';
 import {CreateComponent} from './components/create/create.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        SharedModule,
-        NgxEchartsModule,
-        routing
-    ],
+  imports: [
+    CommonModule,
+    SharedModule,
+    NgxEchartsModule,
+    routing,
+    ReactiveFormsModule
+  ],
     declarations: [
         ChartsComponent,
         EChartsComponent,

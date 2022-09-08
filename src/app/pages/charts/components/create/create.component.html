@@ -1,3 +1,65 @@
-<p>
-  create works!
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <card cardTitle="">
+      <form class="form-group" [formGroup]="form">
+        <section style="padding: 10px">
+          <div>
+            <div class="col-md-12" formGroupName="customer">
+              <div class="col-md-6 -align-left">
+                <label class="control-label">Customer Name</label>
+                <input formControlName="customerName" type="text" class="form-control" placeholder="Name">
+              </div>
+              <div class="col-md-6">
+                <label class="control-label">Customer Address</label>
+                <input formControlName="address"  type="text" class="form-control"  placeholder="Address">
+              </div>
+              <div class="col-md-6">
+                <label class="control-label">Customer Contact Number</label>
+                <input formControlName="number" type="text" class="form-control"  placeholder="Contact Number">
+              </div>
+              <div class="col-md-6">
+                <label class="control-label">Remarks</label>
+                <input formControlName="remarks" type="text" class="form-control" placeholder="Remarks">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div formArrayName="item">
+            <div *ngFor="let tileItem of item?.controls; let i = index"
+              [formGroupName]="i">
+              <div class="col-md-12" style="padding-top: 30px">
+                <div class="col-md-4">
+                  <label class="control-label">Item Code</label>
+                  <select name="select" id="select1" formControlName="itemCode" class="form-control">
+                    <option value="0"></option>
+                    <option value="1">option2</option>
+                    <option value="2">option3</option>
+                    <option value="3">option4</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label class="control-label">Quantity</label>
+                  <input type="number" class="form-control" formControlName="quantity" placeholder="Quantity">
+                </div>
+                <div class="col-md-4">
+                  <label class="control-label">Discount</label>
+                  <input type="number" class="form-control" formControlName="discount" name="discounts" placeholder="Discount">
+                </div>
+              </div>
+            </div>
+          </div>
+            <div >
+              <button style="margin-top: 40px" (click)="addTile()" class="btn btn-info">Add Tile</button>
+            </div>
+
+        </section>
+        <div class="col-md-12" style="padding-top: 30px"></div>
+        <section style="padding-top: 100px">
+          <button type="button" class="btn btn-primary" (click)="createTileOrder()">Create</button>
+          <button type="button" class="btn btn-danger" (click)="loadTile()">Cancel</button>
+        </section>
+      </form>
+    </card>
+  </div>
+</div>

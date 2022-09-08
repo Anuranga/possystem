@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './editor.routing';
 import { SharedModule } from '../../shared/shared.module';
 import { EditorComponent } from './editor.component';
-import { CreateComponent } from '../charts/components/create/create.component';
+//import { CreateComponent } from '../charts/components/create/create.component';
 
 @NgModule({
     imports: [
@@ -16,7 +16,7 @@ import { CreateComponent } from '../charts/components/create/create.component';
     ],
     declarations: [
         EditorComponent,
-        CreateComponent
+       // CreateComponent
     ]
 })
 export class EditorModule { }
